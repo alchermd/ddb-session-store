@@ -4,7 +4,9 @@ A simple session store implementation backed by a DynamoDB Table.
 
 ## Background
 
-This is my personal interpretation of the example with the same name in [Alex DeBrie's DynamoDB Book](https://dynamodbbook.com/). My approach has a few differences from Alex's solution, but the overall functionality remains the same. Thus, the differences are not discussed in this repository.
+This is my personal interpretation of the example with the same name
+in [Alex DeBrie's DynamoDB Book](https://dynamodbbook.com/). My approach has a few differences from Alex's solution, but
+the overall functionality remains the same. Thus, the differences are not discussed in this repository.
 
 ## Table Design
 
@@ -51,3 +53,10 @@ This is my personal interpretation of the example with the same name in [Alex De
         </tr>
     </tbody>
 </table>
+
+### Entity Primary Keys
+
+| Entity  | PK               | SK               |
+|---------|------------------|------------------|
+| User    | USER#\<username> | USER#\<username> | 
+| Session | USER#\<username> | SESSION#\<id>    |

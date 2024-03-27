@@ -30,7 +30,7 @@ export class CdkStack extends cdk.Stack {
       handler: 'handler',
       entry: path.join(__dirname, 'lambda/api/login/post.ts')
     })
-    sessionTable.grantWriteData(loginHandler)
+    sessionTable.grantReadWriteData(loginHandler)
     login.addMethod('POST', new apigw.LambdaIntegration(loginHandler))
 
     const userSessions = api.root.addResource('users').addResource('{username}').addResource('sessions')

@@ -19,7 +19,8 @@ export class CdkStack extends cdk.Stack {
       sortKey: {
         name: 'SK',
         type: ddb.AttributeType.STRING
-      }
+      },
+      timeToLiveAttribute: 'ttl'
     })
 
     const api = new apigw.RestApi(this, 'SessionAPI')
